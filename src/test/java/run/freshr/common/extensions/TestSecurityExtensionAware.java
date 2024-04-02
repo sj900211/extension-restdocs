@@ -26,7 +26,7 @@ public abstract class TestSecurityExtensionAware
     extends TestExtensionAware {
 
   @Autowired
-  private S service;
+  protected S service;
 
   /**
    * 인증 정보 설정
