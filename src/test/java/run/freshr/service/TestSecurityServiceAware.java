@@ -22,6 +22,24 @@ public interface TestSecurityServiceAware {
   //  /  _____  \ |  `--'  |     |  |     |  |  |  |
   // /__/     \__\ \______/      |__|     |__|  |__|
 
+  /**
+   * RSA 키 생성
+   *
+   * @apiNote RSA 키 생성
+   * @author FreshR
+   * @since 2024. 4. 2. 오후 3:34:06
+   */
+  void createRsa();
+
+  /**
+   * 인증인가 정보 생성
+   *
+   * @param id   id
+   * @param role role
+   * @apiNote 인증인가 정보 생성
+   * @author FreshR
+   * @since 2024. 4. 2. 오후 2:14:39
+   */
   void createAuth(String id, Role role);
 
 }
