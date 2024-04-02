@@ -100,4 +100,15 @@ public abstract class TestSecurityExtensionAware
     authentication("", ROLE_ANONYMOUS);
   }
 
+  /**
+   * RSA 정보 생성
+   *
+   * @apiNote RSA 정보 생성
+   * @author FreshR
+   * @since 2024. 4. 2. 오후 3:38:05
+   */
+  protected void setRsa() {
+    service.createRsa();
+  }
+
 }
