@@ -658,6 +658,20 @@ public class PrintUtil {
      *
      * @param name        name
      * @param description description
+     * @return builder
+     * @apiNote {@link ParameterDescriptor} 생성
+     * @author FreshR
+     * @since 2024. 4. 2. 오후 4:03:57
+     */
+    public Builder parameter(String name, String description) {
+      return parameter(name, description, prefixOptional, new Attribute[]{});
+    }
+
+    /**
+     * {@link ParameterDescriptor} 생성
+     *
+     * @param name        name
+     * @param description description
      * @param optional    optional
      * @return builder
      * @apiNote {@link ParameterDescriptor} 생성
