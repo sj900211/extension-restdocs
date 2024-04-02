@@ -11,5 +11,6 @@ public class ThreadUtil {
 
   public static ThreadLocal<String> threadAccess = new ThreadLocal<>(); // ACCESS TOKEN
   public static ThreadLocal<String> threadRefresh = new ThreadLocal<>(); // REFRESH TOKEN
+  public static ThreadLocal<String> threadPublicKey = new ThreadLocal<>(); // RSA PUBLIC KEY
 
 }
