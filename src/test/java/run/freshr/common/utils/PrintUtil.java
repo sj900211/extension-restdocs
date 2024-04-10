@@ -1,6 +1,7 @@
 package run.freshr.common.utils;
 
 import static java.util.Objects.isNull;
+import static java.util.Optional.ofNullable;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
 import static org.springframework.restdocs.request.RequestDocumentation.parameterWithName;
 import static org.springframework.util.StringUtils.hasLength;
@@ -498,8 +499,8 @@ public class PrintUtil {
       String name = map.get("name").toString();
       String description = map.get("description").toString();
       String parameterDescription = hasLength(customDescription) ? customDescription : description;
-      String size = map.get("size").toString();
-      String format = map.get("format").toString();
+      String size = ofNullable(map.get("size")).orElse("").toString();
+      String format = ofNullable(map.get("format")).orElse("").toString();
 
       if (hasLength(format)) {
         parameterDescription += " | format: " + format;
@@ -523,6 +524,21 @@ public class PrintUtil {
      */
     public Builder parameter(HashMap<?, ?>... docDatas) {
       List.of(docDatas).forEach(this::parameter);
+
+      return this;
+    }
+
+    /**
+     * {@link ParameterDescriptor} 생성
+     *
+     * @param array array
+     * @return builder
+     * @apiNote {@link ParameterDescriptor} 생성
+     * @author FreshR
+     * @since 2024. 4. 4. 오전 10:26:22
+     */
+    public Builder parameter(SearchData... array) {
+      List.of(array).forEach(this::parameter);
 
       return this;
     }
